@@ -27,5 +27,16 @@
         </div>
     </div>
 
+    <div th:fragment="results" >
+        <h3 th:text="${results}"></h3>
+
+        <table class="job-listing" th:each="job : ${searchResults}">
+            <tr th:each="row : ${job}">
+                <td style="text-transform:capitalize" th:text="${row.key}"></td>
+                <td th:text="${row.value}"></td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>
